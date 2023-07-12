@@ -1,7 +1,67 @@
 #ci:group=:book: lint
 
-- label: "lint"
+- label: "clang"
   commands:
     - export LINT=1
     - ./ci/env/install-dependencies.sh
-    - ./ci/v2/lint.sh
+    - ./ci/v2/lint.sh clang
+
+- label: "script"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh scripts
+
+- label: "banned words"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh banned_words
+
+- label: "annotations"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh annotations
+
+- label: "readme"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh readme
+
+- label: "bazel buildifier"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh bazel_buildifier
+
+- label: "bazel pytest"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh bazel_pytest
+
+- label: "web"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh web
+
+- label: "copyright"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh copyright
+
+- label: "test script"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh test_script
+
+- label: "test run"
+  commands:
+    - export LINT=1
+    - ./ci/env/install-dependencies.sh
+    - ./ci/v2/lint.sh test_run
